@@ -2,8 +2,12 @@
 {% block title %}
     Register a New User
 {% endblock title %}
-
-
 {% block content %}
 <h1>Register a New User</h1>
+
+<form class="form-with-validation" action="" method="post">
+    {% csrf_token %}
+    {{form}}
+    <button class="form-submit"></button>
+</form>
 {% endblock content %}
