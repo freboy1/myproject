@@ -13,6 +13,6 @@ def post_page(request, slug):
     context = {'post': post}
     return render(request, 'posts/post_page.html', context)
 
-@login_required(login_url="users/login")
+@login_required(login_url="/users/login/")
 def post_new(request):
     return render(request, 'posts/post_new.html')
