@@ -18,6 +18,8 @@ def my_login(request):
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             login(request, user=form.get_user())
+            if 'next' in request.POST:
+                return redirect(request.POST.get('next'))
             return redirect('posts:list')
     form = AuthenticationForm()
     context = {'form': form}
