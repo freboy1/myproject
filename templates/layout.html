@@ -18,7 +18,10 @@
         <a href="/about">About</a>|
         <a href="{% url "posts:list" %}">Posts</a>|
         <a href="{% url "users:register" %}">Register</a>|
-        <a href="{% url "users:login" %}">Login</a>
+        <a href="{% url "users:login" %}">Login</a>|
+        <form action="{% url "users:logout" %}" method="post">
+            <button type="submit">Logout</button>
+        </form>
     </nav>
 
     <main>
